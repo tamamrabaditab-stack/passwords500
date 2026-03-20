@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SKYTV pass</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --main: #00f0ff;
+    --bg: #0b0f2a;
+    --text: white;
+}
+
+body.light {
+    --bg: #f5f7fa;
+    --text: #111;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, var(--bg), #000);
+    color: var(--text);
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+/* نجوم */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: moveStars 60s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes moveStars {
+    from { transform: translate(0,0); }
+    to { transform: translate(-500px,-500px); }
+}
+
+/* Header */
+.header {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--main);
+}
+
+/* زر الوضع */
+.toggle-mode {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    background: var(--main);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* المحتوى */
+.container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h1 {
+    font-size: 38px;
+    text-shadow: 0 0 20px var(--main);
+}
+
+/* input */
+input {
+    padding: 12px;
+    width: 260px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+    box-shadow: 0 0 10px var(--main);
+}
+
+/* button */
+button.search {
+    padding: 12px 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: var(--main);
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 0 15px var(--main);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* suggestions */
+#suggestions {
+    margin-top: 10px;
+}
+
+.suggestion-item {
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.suggestion-item:hover {
+    background: rgba(0,240,255,0.2);
+}
+
+/* result */
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--main);
+}
+
+/* footer */
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.footer a {
+    color: var(--main);
+    margin: 0 10px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+    <img src="logo.webp" class="logo">
+    <span>SKYTV</span>
+</div>
+
+<button class="toggle-mode" onclick="toggleMode()">🌙 Mode</button>
+
+<div class="container">
+    <h1>🌌 SKYTV Password</h1>
+
+    <input type="text" id="username" placeholder="Type username..." oninput="showSuggestions()">
+    <button class="search" onclick="searchUser()">Search</button>
+
+    <div id="suggestions"></div>
+    <p id="result"></p>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <a href="https://www.instagram.com/mm_mqm520/" target="_blank">👨‍💻 Developer</a>
+    <a href="https://www.instagram.com/skytvx" target="_blank">🏢 Company</a>
+    <a href="https://linktr.ee/skytvx" target="_blank">🔗 All Links</a>
+    <p>© 2026 Password System | All Rights Reserved By Tamam AlRabadi</p>
+</div>
+
+<script>
+let users = {
+    "chrismendoza":"SKYTVSTORE!!!!",
+    "sundimemoli7g":"SKYTVSTORE!!!!",
+    "bf0qmwlf0s":"4tkorxyh7",
+    "ogcoe40882":"bpvd3711",
+    "gyvfb49046":"SKYTVSTORE!!!!!!",
+    "mattia3431":"SKYTVSTORE!!!!!!",
+    "elninjo36":"SKYTVSTORE!!!!!!",
+    "Achilleee2":"SkyResident8",
+    "azza_claydog":"SKYTVSTORE!!!!!",
+    "danwangbule":"qwechengxinx6",
+    "ag7ay2050":"SkyTheLast1",
+    "godofredo57":"SkyTvUncharted",
+    "gblga428":"daipq812",
+    "naubm12923":"gpuqq71695",
+    "northcertpasscow1980":"SKYTVSTORE!!!!",
+    "aleeshamahxbq":"e620Ht1gy",
+    "p7ao0hxLs4":"SKYTVSTORE!!!!!!",
+    "qxen85607":"SKYTVSTORE!!!!",
+    "Pr7Ue2Gn9Hv3":"SKYTVSTORE!!!",
+    "lslbi05158":"SKYTVSTORE!!",
+    "ZcWn5836378":"SKYTVSTORE!!!",
+    "jessicadolittle8v":"SKYTVSTORE00!!",
+    "nikolya_oss1233":"SKYTVSTORE!!!!!!",
+    "obrqn26579":"SKYTVSTORE!!",
+    "badotez":"SKYTVSTORE!!!",
+    "paulhendrikhammelmann":"SKYTVSTORE!!!",
+    "amwi2132":"SKYTVSTORE!!!",
+    "hormonnisa2":"SKYTVSTORE!!!!"
+};
+
+/* suggestions */
+function showSuggestions() {
+    let input = document.getElementById("username").value.toLowerCase();
+    let suggestionsDiv = document.getElementById("suggestions");
+    suggestionsDiv.innerHTML = "";
+
+    if (input === "") return;
+
+    for (let user in users) {
+        if (user.includes(input)) {
+            let div = document.createElement("div");
+            div.innerText = user;
+            div.classList.add("suggestion-item");
+
+            div.onclick = function() {
+                document.getElementById("username").value = user;
+                suggestionsDiv.innerHTML = "";
+            };
+
+            suggestionsDiv.appendChild(div);
+        }
+    }
+}
+
+/* search */
+function searchUser() {
+    let user = document.getElementById("username").value.trim();
+
+    if (users[user]) {
+        document.getElementById("result").innerText =
+            "Password: " + users[user];
+    } else {
+        document.getElementById("result").innerText =
+            "User not found!";
+    }
+}
+
+/* dark/light */
+function toggleMode() {
+    document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>
